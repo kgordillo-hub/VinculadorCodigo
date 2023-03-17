@@ -1,16 +1,35 @@
-package co.mlforex.forecast.model;
+package co.mlforex.forecast.vinculadorCodigo.model;
+
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTyped;
 
 import java.io.Serializable;
 
+@DynamoDBDocument
 public class Mensaje implements Serializable {
 
+    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.BOOL)
+    @DynamoDBAttribute
     private Boolean esPublico;
+    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.BOOL)
+    @DynamoDBAttribute
     private Boolean codigoVulnerable;
+    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.BOOL)
+    @DynamoDBAttribute
     private Boolean openAPIFileCorrect;
+    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.BOOL)
+    @DynamoDBAttribute
     private Boolean imagenGenerada;
+    @DynamoDBAttribute
     private String linkRepo;
+    @DynamoDBAttribute
     private String branchRepoName;
+    @DynamoDBAttribute
     private String idUsuario;
+
+    public Mensaje(){}
 
     public Boolean getEsPublico() {
         return esPublico;
