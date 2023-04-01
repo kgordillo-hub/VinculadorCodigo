@@ -20,6 +20,7 @@ public class VinculadorController {
     @Autowired
     VinculadorService vinculadorService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/vincularCodigo")
     public ResponseEntity<String> vincularAlgoritmo(@RequestBody TransaccionInfo transaccionInfo) {
         try {
@@ -33,6 +34,7 @@ public class VinculadorController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/consultarVinculaciones/{idUsuario}")
     public ResponseEntity<List<TransaccionInfo>> consultarVinculaciones(@PathVariable String idUsuario) {
         try {
@@ -44,6 +46,7 @@ public class VinculadorController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/actualizarVinculacion/{evento}")
     public ResponseEntity<String> actulizarVinculacion(@RequestBody TransaccionInfo transaccionInfo, @PathVariable String evento) {
         try {
