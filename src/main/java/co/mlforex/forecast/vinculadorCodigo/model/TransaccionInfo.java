@@ -21,6 +21,9 @@ public class TransaccionInfo implements Serializable {
     @JsonIgnore
     private String idTransaccion;
 
+    @DynamoDBAttribute
+    private String descripcion;
+
     //Attributes
     private Mensaje mensaje;
 
@@ -78,5 +81,14 @@ public class TransaccionInfo implements Serializable {
 
     public void setIdTransaccion(String idTransaccion) {
         this.idTransaccion = idTransaccion;
+    }
+
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
